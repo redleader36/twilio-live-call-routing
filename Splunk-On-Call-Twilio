@@ -744,7 +744,7 @@ function call (twiml, context, event, payload) {
         }
 
         // Attempt to connect to last on-call person and go to voicemail if no answer
-        if (phoneNumbers.length === 1) {
+        if (phoneNumbers.length >= 1) {
           phoneNumber = phoneNumbers[0];
           detailedLog = `\n\n${From} calling ${phoneNumber.user}...${detailedLog || ''}`;
           twiml.dial(
